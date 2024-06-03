@@ -1,0 +1,33 @@
+@import './base.css';
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+  
+}
+
+header {
+  width: 100vw;
+  @apply
+  bg-white
+  fixed
+  bottom-0
+  left-0;
+}
+
+header nav {
+  @apply
+  flex
+  justify-between
+  w-full;
+}
+
+img {
+  @apply
+  w-full;
+}

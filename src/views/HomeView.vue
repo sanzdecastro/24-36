@@ -11,7 +11,7 @@ export default {
   },
   data() {
     return {
-        photoUrl: 'https://lh3.googleusercontent.com/d',
+        photoUrl: 'https://drive.google.com/thumbnail?id=',
     }
   },
   methods: {
@@ -26,7 +26,8 @@ export default {
   <main>
     <div>
       <div v-for="photo in dataReelRandom" :key="photo">
-        <img :src="this.photoUrl + '/' + photo.image" alt="" >
+        <!-- <img :src="this.photoUrl + '/' + photo.image" alt="" > -->
+        <img :src="this.photoUrl + photo.image + '&sz=w600-h600'" :alt="photo.title">
         <strong>{{ photo.title }}</strong>
         <div class="prices">
           <span v-if="photo.size20x30">{{ photo.size20x30 }}€</span>

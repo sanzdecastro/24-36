@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      photoUrl: 'https://lh3.googleusercontent.com/d',
+      photoUrl: 'https://drive.google.com/thumbnail?id=',
       optionsSelected: [],
     }
   },
@@ -58,7 +58,7 @@ export default {
           <span>{{ this.selectedPhoto.size20x30 }}€</span>
           <span v-if="this.selectedPhoto.size40x60">- {{ this.selectedPhoto.size40x60 }}€</span>
         </div>
-    <img :src="this.photoUrl + '/' + this.selectedPhoto.image"  alt="" >
+    <img :src="this.photoUrl  + this.selectedPhoto.image + '&sz=w600-h600'"  :alt="this.$route.params.title" >
     <p>{{ this.selectedPhoto.description }}</p>
     <div class="options">
       <div class="option" @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]">

@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import { mapState } from 'pinia';
 import { mapActions } from 'pinia';
 import { usePhotosStore } from '@/stores/photosStore.js'
+import { gsap } from "gsap";
 
 import Loading from './components/loading.vue'
 export default {
@@ -19,6 +20,26 @@ export default {
     },
   methods: {
         ...mapActions(usePhotosStore, ['fetchData', 'getLocal']),
+
+        beforeEnter(el) {
+          gsap.set(el, {
+            opacity: 0,
+          });
+        },
+        enter(el, done) {
+          gsap.to(el, {
+            opacity: 1,
+            duration: 1,
+            onComplete: done
+          });
+        },
+        leave(el, done) {
+          gsap.to(el, {
+            opacity: 0,
+            duration: 1,
+            onComplete: done
+          });
+        }
     }
 }
 </script>
@@ -39,7 +60,11 @@ export default {
 
   <Loading v-if="loading"/>
   
-  <RouterView/> 
+  <router-view v-slot="{ Component, route }">
+      <transition :name="route.name" mode="out-in" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+        <component :is="Component" :key="route.path"></component>
+      </transition>
+  </router-view>
 
 </template>
 

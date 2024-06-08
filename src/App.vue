@@ -29,14 +29,14 @@ export default {
         enter(el, done) {
           gsap.to(el, {
             opacity: 1,
-            duration: 1,
+            duration: .5,
             onComplete: done
           });
         },
         leave(el, done) {
           gsap.to(el, {
             opacity: 0,
-            duration: 1,
+            duration: .5,
             onComplete: done
           });
         }

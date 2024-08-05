@@ -2,10 +2,29 @@
 import { mapState } from 'pinia';
 import { mapActions } from 'pinia';
 import { usePhotosStore } from '@/stores/photosStore.js'
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+
 export default {
   // props: {
   //   dataReelRandom: Array,
   // },
+  components: {
+      Swiper,
+      SwiperSlide,
+  },
+  setup() {
+      const onSwiper = (swiper) => {
+        console.log(swiper);
+      };
+      const onSlideChange = () => {
+        console.log('slide change');
+      };
+      return {
+        
+      };
+    },
   computed: {
         ...mapState(usePhotosStore, ['data','dataReel','dataReelRandom','selectedPhoto'])
   },
@@ -25,16 +44,24 @@ export default {
 <template>
   <main>
     <div>
-      <div v-for="photo in dataReelRandom" :key="photo">
-        <!-- <img :src="this.photoUrl + '/' + photo.image" alt="" > -->
-        <img :src="this.photoUrl + photo.image + '&sz=w600-h600'" :alt="photo.title">
-        <strong>{{ photo.title }}</strong>
-        <div class="prices">
-          <span v-if="photo.size20x30">{{ photo.size20x30 }}€</span>
-          <span v-if="photo.size40x60">- {{ photo.size40x60 }}€</span>
-        </div>
-        <router-link @click="updateSelectedPhoto(photo)" :to="`${photo.title}`">See details</router-link>
-      </div>
+      <swiper
+          :direction="'vertical'"
+        
+        >
+        <swiper-slide v-for="photo in dataReelRandom" :key="photo">
+          
+          <img :src="this.photoUrl + photo.image + '&sz=w600-h600'" :alt="photo.title">
+          <strong>{{ photo.title }}</strong>
+          <div class="prices">
+            <span v-if="photo.size20x30">{{ photo.size20x30 }}€</span>
+            <span v-if="photo.size40x60">- {{ photo.size40x60 }}€</span>
+          </div>
+          <router-link @click="updateSelectedPhoto(photo)" :to="`${photo.title}`">See details</router-link>
+        
+          <!-- <img :src="this.photoUrl + '/' + photo.image" alt="" > -->
+        </swiper-slide>
+
+      </swiper>
     </div>
   </main>
 </template>

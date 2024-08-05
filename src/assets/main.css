@@ -4,11 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Sometimes';
+  src: url('./public/fonts/SometimesTimes-Regular.woff') format('woff'),
+      url('fonts/SometimesTimes-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Atlas';
+  src: url('fonts/AtlasGrotesk-Regular.woff2') format('woff2'),
+      url('fonts/AtlasGrotesk-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Atlas-Bold';
+  src: url('fonts/AtlasGrotesk-Bold.woff2') format('woff2'),
+      url('fonts/AtlasGrotesk-Bold.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
-  
+  font-family: 'Atlas';
 }
 
 header {
@@ -25,6 +49,10 @@ header nav {
   flex
   justify-between
   w-full;
+}
+
+.swiper-vertical > .swiper-wrapper {
+  height: 100vh;
 }
 
 img {

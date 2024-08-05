@@ -45,6 +45,8 @@ export default {
 </script>
 
 <template>
+  <h1 class="logo">24-36</h1>
+  
   <header>
     <nav>
       <RouterLink to="/">Reel</RouterLink>
@@ -59,7 +61,7 @@ export default {
   </header>
 
   <Loading v-if="loading"/>
-  
+
   <router-view v-slot="{ Component, route }">
       <transition :name="route.name" mode="out-in" @before-enter="beforeEnter" @enter="enter" @leave="leave">
         <component :is="Component" :key="route.path"></component>

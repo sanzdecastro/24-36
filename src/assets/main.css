@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'Sometimes';
-  src: url('./public/fonts/SometimesTimes-Regular.woff') format('woff'),
+  src: url('fonts/SometimesTimes-Regular.woff') format('woff'),
       url('fonts/SometimesTimes-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
@@ -37,18 +37,48 @@ body {
 
 header {
   width: 100vw;
+  border-top: 1px solid black;
+  padding: 10px 20px;
   @apply
   bg-white
   fixed
   bottom-0
-  left-0;
+  left-0
+  z-10;
 }
 
 header nav {
   @apply
   flex
+  items-center
   justify-between
   w-full;
+}
+
+.logo {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  font-family: 'Sometimes';
+  font-size: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.swiper {
+
+}
+
+.swiper .swiper-wrapper .swiper-slide {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
 }
 
 .swiper-vertical > .swiper-wrapper {

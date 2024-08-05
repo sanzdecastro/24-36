@@ -49,14 +49,14 @@ export default {
         
         >
         <swiper-slide v-for="photo in dataReelRandom" :key="photo">
-          
+          <router-link @click="updateSelectedPhoto(photo)" :to="`${photo.title}`">
           <img :src="this.photoUrl + photo.image + '&sz=w600-h600'" :alt="photo.title">
           <strong>{{ photo.title }}</strong>
           <div class="prices">
             <span v-if="photo.size20x30">{{ photo.size20x30 }}€</span>
             <span v-if="photo.size40x60">- {{ photo.size40x60 }}€</span>
           </div>
-          <router-link @click="updateSelectedPhoto(photo)" :to="`${photo.title}`">See details</router-link>
+          </router-link>
         
           <!-- <img :src="this.photoUrl + '/' + photo.image" alt="" > -->
         </swiper-slide>

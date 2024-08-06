@@ -87,6 +87,8 @@ header nav {
   font-size: max(138 * var(--r), 138px);
   line-height:  max(138 * var(--r), 138px);
   text-align: center;
+  @apply
+  -z-10;
 }
 
 .swiper .swiper-wrapper .swiper-slide {
@@ -94,11 +96,12 @@ header nav {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  height: 70vh;
 }
 
 .swiper .swiper-wrapper .swiper-slide img {
-  width: 100%;
+
 }
 
 .swiper-vertical > .swiper-wrapper {
@@ -120,4 +123,86 @@ img {
   @apply
   text-left
   w-full;
+}
+
+.single .image-container {
+  top: max(70 * var(--r), 70px);
+  @apply
+  fixed
+  left-0
+  overflow-hidden
+  -z-10
+  rounded-lg;
+}
+
+.single .card-info {
+  margin-top: calc(100vh - 5vh);
+  padding: max(20 * var(--r), 20px);
+  padding-bottom: 20vh;
+  @apply
+  z-10
+  bg-white;
+}
+
+.single .card-info h1 {
+  font-size: max(30 * var(--r), 30px);
+  line-height: max(30 * var(--r), 30px);
+  margin-bottom: max(3 * var(--r), 3px);
+}
+
+.single .card-info .info-header {
+  margin-bottom: max(30 * var(--r), 30px);
+  @apply
+  gap-2
+  flex;
+}
+
+.single .card-info .info-header .autor {
+  @apply
+  text-right
+  flex-1;
+  font-family: 'Sometimes';
+  font-size: max(38 * var(--r), 38px);
+  line-height: max(38 * var(--r), 38px);
+}
+
+.single .card-info .info-header .autor span {
+  font-size: max(20 * var(--r), 20px);
+  line-height: max(20 * var(--r), 20px);
+}
+
+.single .card-info .info {
+  margin-bottom: max(30 * var(--r), 30px);
+  @apply
+  flex;
+}
+
+.single .card-info .info p, .single .card-info .prices {
+  @apply
+  flex-1;
+}
+
+.options {
+  @apply
+  gap-2
+  flex;
+  margin-bottom: max(30 * var(--r), 30px);
+}
+
+.options .option {
+  border: 1px solid black;
+  padding: max(12 * var(--r), 12px) max(23 * var(--r), 23px) max(10 * var(--r), 10px) max(23 * var(--r), 23px);
+  border-radius: 100%;
+}
+
+.submit {
+  padding: max(10 * var(--r), 10px) max(20 * var(--r), 20px) max(7 * var(--r), 7px) max(20 * var(--r), 20px);
+  border: 1px solid black;
+  @apply
+  float-end
+  rounded-full;
+}
+
+.single h3 {
+  margin-bottom: max(8 * var(--r), 8px);
 }

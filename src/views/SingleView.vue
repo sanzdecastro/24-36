@@ -52,27 +52,40 @@ export default {
 <template>
   <div class="single">
     <!-- <imageSelection/> -->
-    <h1>{{this.$route.params.title}}</h1>
-    {{ this.selectedPhoto.autor }}
-    <div class="prices">
-          <span>{{ this.selectedPhoto.size20x30 }}€</span>
-          <span v-if="this.selectedPhoto.size40x60">- {{ this.selectedPhoto.size40x60 }}€</span>
-        </div>
-    <img :src="this.photoUrl  + this.selectedPhoto.image + '&sz=w600-h600'"  :alt="this.$route.params.title" >
-    <p>{{ this.selectedPhoto.description }}</p>
-    <div class="options">
-      <div class="option" @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]">
-        <div class="" v-if="typeof option ===  'number'">
-          {{ key }}  {{ option }}
-        </div>
-      </div>
-        <!-- <div class="option" v-for="option in sizeOptions">
-          <span @click="addOption(option)" class="" v-if="typeof option === 'number'">
-            {{ option }} €
-          </span>
-        </div> -->
+    <div class="image-container">
+      <img :src="this.photoUrl  + this.selectedPhoto.image + '&sz=w600-h600'"  :alt="this.$route.params.title" >
     </div>
-    <button :class="optionsSelected.length > 0 ? '' : 'disabled'" @click="addToCart(this.selectedPhoto.image, selectedPhoto.title, selectedPhoto.autor, optionsSelected)">Add to cart</button>
+    
+    <div class="card-info">
+      <div class="info-header">
+        <h1>{{this.$route.params.title}}</h1>
+        <div class="autor"><span>by</span> {{ this.selectedPhoto.autor }}</div>
+      </div>
+      
+      <div class="info">
+          <div class="prices">
+            <span>{{ this.selectedPhoto.size20x30 }}€</span>
+            <span v-if="this.selectedPhoto.size40x60">- {{ this.selectedPhoto.size40x60 }}€</span>
+          </div>
+          <p>{{ this.selectedPhoto.description }}</p>
+      </div>
+      
+      <h3>Medida</h3>
+      <div class="options">
+        <div class="option" @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]">
+          <div class="" v-if="typeof option ===  'number'">
+            {{ key }}
+          </div>
+        </div>
+          <!-- <div class="option" v-for="option in sizeOptions">
+            <span @click="addOption(option)" class="" v-if="typeof option === 'number'">
+              {{ option }} €
+            </span>
+          </div> -->
+      </div>
+      <button class="submit" :class="optionsSelected.length > 0 ? '' : 'disabled'" @click="addToCart(this.selectedPhoto.image, selectedPhoto.title, selectedPhoto.autor, optionsSelected)">Add to cart</button>
+    </div>
+    
   </div>
 </template>
 

@@ -70,7 +70,5 @@ export default {
 </template>
 
 <style>
-.single {
-  padding-bottom: 200px;
-}
+
 </style>

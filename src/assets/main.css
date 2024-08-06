@@ -33,12 +33,13 @@
 
 body {
   font-family: 'Atlas';
+  font-size: max(15 * var(--r), 15px);
 }
 
 header {
   width: 100vw;
   border-top: 1px solid black;
-  padding: 10px 20px;
+  padding: max(6 * var(--r), 6px) max(20 * var(--r), 20px);
   @apply
   bg-white
   fixed
@@ -53,6 +54,28 @@ header nav {
   items-center
   justify-between
   w-full;
+  font-size: max(30 * var(--r), 30px);
+  line-height: max(30 * var(--r), 30px);
+}
+
+.bag_container {
+  @apply
+  flex
+  gap-1;
+}
+
+.bag_container .bag {
+  width: max(28 * var(--r), 28px);
+  height: max(28 * var(--r), 28px);
+  font-size: max(18 * var(--r), 18px);
+  @apply
+  flex
+  items-center
+  justify-center
+  inline-block
+  bg-black
+  text-white
+  rounded-full;
 }
 
 .logo {
@@ -61,20 +84,17 @@ header nav {
   top: 0px;
   left: 0px;
   font-family: 'Sometimes';
-  font-size: 100px;
-  line-height: 100px;
+  font-size: max(138 * var(--r), 138px);
+  line-height:  max(138 * var(--r), 138px);
   text-align: center;
-}
-.swiper {
-
 }
 
 .swiper .swiper-wrapper .swiper-slide {
-  padding: 20px;
+  padding: max(20 * var(--r), 20px);
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .swiper .swiper-wrapper .swiper-slide img {
@@ -82,10 +102,22 @@ header nav {
 }
 
 .swiper-vertical > .swiper-wrapper {
-  height: 100vh;
+  height: calc(100vh - 5vh);
 }
 
 img {
   @apply
+  w-full;
+}
+
+.card a img {
+  margin-bottom: max(14 * var(--r), 14px);
+}
+.card a h2 {
+  font-size: max(30 * var(--r), 30px);
+  line-height: max(30 * var(--r), 30px);
+  margin-bottom: max(3 * var(--r), 3px);
+  @apply
+  text-left
   w-full;
 }

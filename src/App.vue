@@ -50,7 +50,8 @@ export default {
   <header>
     <nav>
       <RouterLink to="/">Reel</RouterLink>
-      <RouterLink to="/cart">Cart
+      <RouterLink class="bag_container" to="/cart">
+        <span>Cart</span>
         <div class="bag">
           <span class="" v-if="numberCartItems > 0" >{{ numberCartItems }}</span>
         </div>

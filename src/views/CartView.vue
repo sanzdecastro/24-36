@@ -76,13 +76,15 @@ export default {
     <h1>This is an cart page</h1>
 
     <div class="autor-block duna" v-if="itemsDuna.length > 0">
-      <div class="items" v-if="itemsDuna.length > 0" v-for="item in itemsDuna">
-        <div class="item">
+      <div class="item" v-if="itemsDuna.length > 0" v-for="item in itemsDuna">
+        <div class="image-container">
             <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
+          </div>
+          <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <span>{{  item.autor }}</span>
-            <div class="" v-for=" selected in item.optionsSelected">
-              {{ selected.size }} {{ selected.price }}
+            <h3 class="autor">{{  item.autor }}</h3>
+            <div class="options" v-for=" selected in item.optionsSelected">
+              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
@@ -90,18 +92,20 @@ export default {
        
       </div>
       <p>Total Price: {{ this.totalDuna }}</p>
-        <!-- <PayPalButton /> -->
-        <PayPalDonateButton/>
+        
+        <!-- <PayPalDonateButton/> -->
     </div>
 
     <div class="autor-block lorenzo" v-if="itemsLorenzo.length > 0">
-      <div class="items" v-if="itemsLorenzo.length > 0" v-for="item in itemsLorenzo">
-        <div class="item">
+      <div class="item" v-if="itemsLorenzo.length > 0" v-for="item in itemsLorenzo">
+        <div class="image-container">
             <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
+          </div>
+            <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <span>{{  item.autor }}</span>
-            <div class="" v-for=" selected in item.optionsSelected">
-              {{ selected.size }} {{ selected.price }}
+            <h3 class="autor">{{  item.autor }}</h3>
+            <div class="options" v-for=" selected in item.optionsSelected">
+              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
@@ -109,18 +113,19 @@ export default {
        
       </div>
       <p>Total Price: {{ this.totalLorenzo }}</p>
-        <!-- <PayPalButton /> -->
-        <PayPalDonateButton/>
+        <!-- <PayPalDonateButton/> -->
     </div>
 
     <div class="autor-block paula" v-if="itemsPaula.length > 0">
-      <div class="items" v-if="itemsPaula.length > 0" v-for="item in itemsPaula">
-        <div class="item">
+      <div class="item" v-if="itemsPaula.length > 0" v-for="item in itemsPaula">
+        <div class="image-container">
             <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
+            </div>
+            <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <span>{{  item.autor }}</span>
-            <div class="" v-for=" selected in item.optionsSelected">
-              {{ selected.size }} {{ selected.price }}
+            <h3 class="autor">{{  item.autor }}</h3>
+            <div class="options" v-for=" selected in item.optionsSelected">
+              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
@@ -128,18 +133,19 @@ export default {
        
       </div>
       <p>Total Price: {{ this.totalPaula }}</p>
-        <!-- <PayPalButton /> -->
-        <PayPalDonateButton/>
+        <!-- <PayPalDonateButton/> -->
     </div>
 
     <div class="autor-block santi" v-if="itemsSanti.length > 0">
-      <div class="items" v-if="itemsSanti.length > 0" v-for="item in itemsSanti">
-        <div class="item">
+      <div class="item" v-if="itemsSanti.length > 0" v-for="item in itemsSanti">
+        <div class="image-container">
             <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
+          </div>
+            <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <span>{{  item.autor }}</span>
-            <div class="" v-for=" selected in item.optionsSelected">
-              {{ selected.size }} {{ selected.price }}
+            <h3 class="autor">{{  item.autor }}</h3>
+            <div class="options" v-for=" selected in item.optionsSelected">
+              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
@@ -147,9 +153,8 @@ export default {
         
       </div>
       <p>Total Price: {{ this.totalSanti }}</p>
-        <!-- <PayPalButton /> -->
-        <PayPalDonateButtonSanti/>
-        <a :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank" style="display:inline-block;background-color:#25d366;padding:10px 24px;color:#fff;font-size:16px;line-height:1.5;border-radius:2px;text-decoration:none;">Contactar</a>
+        <!-- <PayPalDonateButtonSanti/> -->
+        <a class="button" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank" style="display:inline-block;background-color:#25d366;padding:10px 24px;color:#fff;font-size:16px;line-height:1.5;border-radius:2px;text-decoration:none;">Contactar con Santi Sánchez</a>
     </div>
 
     

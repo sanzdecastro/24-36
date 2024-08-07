@@ -217,3 +217,52 @@ img {
   @apply
   opacity-30;
 }
+
+.cart {
+  margin-top: max(180 * var(--r), 180px);
+  padding: max(20 * var(--r), 20px);
+  padding-bottom: max(100 * var(--r), 100px);
+  @apply
+  bg-white;
+}
+.cart .autor-block {
+  @apply
+  flex
+  gap-2
+  flex-col;
+}
+
+.cart .autor-block .item {
+  @apply
+  flex
+  gap-2;
+}
+
+.cart .autor-block h2 {
+  font-size: max(30 * var(--r), 30px);
+  line-height: max(30 * var(--r), 30px);
+}
+
+.cart .autor-block h3 {
+  font-family: 'Sometimes';
+  font-size: max(24 * var(--r), 24px);
+  line-height: max(28 * var(--r), 28px);
+  margin-bottom: max(10 * var(--r), 10px);
+}
+
+.cart .autor-block .options {
+  @apply
+  flex
+  gap-0
+  flex-col;
+}
+
+.cart .autor-block .options span {
+  @apply
+  block;
+}
+
+.cart .autor-block .item .image-container, .cart .autor-block .item .item-info {
+  @apply
+  flex-1;
+}

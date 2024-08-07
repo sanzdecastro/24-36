@@ -4,6 +4,7 @@ import { mapState } from 'pinia';
 import { mapActions } from 'pinia';
 import { usePhotosStore } from '@/stores/photosStore.js'
 import { gsap } from "gsap";
+import Lenis from 'lenis'
 
 import Loading from './components/loading.vue'
 export default {
@@ -15,9 +16,10 @@ export default {
         ...mapState(usePhotosStore, ['data','dataReel','dataReelRandom', 'loading', 'cartItems', 'numberCartItems'])
   },
   created() {
-        this.fetchData();
-        this.getLocal();
-    },
+    this.Lenis()
+    this.fetchData();
+    this.getLocal();
+  },
   methods: {
         ...mapActions(usePhotosStore, ['fetchData', 'getLocal']),
 
@@ -39,13 +41,31 @@ export default {
             duration: .5,
             onComplete: done
           });
+        },
+
+        Lenis() {
+          const lenis = new Lenis()
+
+          lenis.on('scroll', (e) => {
+            console.log(e)
+          })
+
+          function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+          }
+
+          requestAnimationFrame(raf)
         }
     }
 }
 </script>
 
 <template>
-  <h1 class="logo">24-36</h1>
+  <RouterLink to="/">
+    <h1 class="logo">24-36</h1>
+  </RouterLink>
+  
   
   <header>
     <nav>

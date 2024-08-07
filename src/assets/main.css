@@ -89,7 +89,7 @@ a.router-link-active {
   rounded-full;
 }
 
-.logo {
+.logo, a.router-link-active .logo {
   width: 100%;
   position: fixed;
   top: 0px;
@@ -99,6 +99,7 @@ a.router-link-active {
   line-height:  max(138 * var(--r), 138px);
   text-align: center;
   @apply
+  text-black
   -z-10;
 }
 

@@ -77,7 +77,7 @@ export const usePhotosStore = defineStore('photosStore', {
             const tl = gsap.timeline();
 
             tl.to(bagActual, {
-              duration: .6,
+              duration: .3,
               xPercent: -100,
               rotation: 15,
               autoAlpha: 0,
@@ -90,12 +90,12 @@ export const usePhotosStore = defineStore('photosStore', {
               rotation: -15,
               xPercent: 100,
             }).to(bagActual, {
-              duration: .6,
+              duration: .3,
               xPercent: 0,
               autoAlpha: 1,
               rotation: 0,
               ease: "power2.in"
-            })
+            }, '<=.3')
 
 
             // this.numberCartItems = this.numberCartItems + 1;

@@ -35,21 +35,20 @@ export default {
         price: option,
         size: key
       }
-     
       
+
       let index = this.selectedOptionKeys.indexOf(key);
 
-        if (index !== -1) {
-          // La clave ya existe en el array, así que la eliminamos.
-          this.selectedOptionKeys.splice(index, 1);
-          this.optionsSelected.splice(index, 1);
-        } else {
-          // La clave no existe en el array, así que la agregamos.
-          this.selectedOptionKeys.push(key);
-          this.optionsSelected.push(modelSize);
-        }
-      
-      
+      if (index !== -1) {
+        // La clave ya existe en el array, así que la eliminamos.
+        this.selectedOptionKeys.splice(index, 1);
+        this.optionsSelected.splice(index, 1);
+      } else {
+        // La clave no existe en el array, así que la agregamos.
+        this.selectedOptionKeys.push(key);
+        this.optionsSelected.push(modelSize);
+      }
+
       console.log(this.optionsSelected)
       
     }
@@ -99,7 +98,10 @@ export default {
             </span>
           </div> -->
       </div>
-      <button class="submit" :class="optionsSelected.length > 0 ? '' : 'disabled'" @click="addToCart(this.selectedPhoto.image, selectedPhoto.title, selectedPhoto.autor, optionsSelected)">Add to cart</button>
+      <div>
+        <button class="submit" :class="optionsSelected.length > 0 ? '' : 'disabled'" @click="addToCart(this.selectedPhoto.image, selectedPhoto.title, selectedPhoto.autor, optionsSelected)">Add to cart</button>
+      </div>
+      
     </div>
     
   </div>

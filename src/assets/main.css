@@ -206,3 +206,14 @@ img {
 .single h3 {
   margin-bottom: max(8 * var(--r), 8px);
 }
+
+.selected {
+  @apply
+  bg-black
+  text-white;
+}
+
+.disabled {
+  @apply
+  opacity-30;
+}

@@ -15,6 +15,7 @@ export default {
     return {
       photoUrl: 'https://drive.google.com/thumbnail?id=',
       optionsSelected: [],
+      selectedOptionKeys: []
     }
   },
   methods: {
@@ -34,8 +35,23 @@ export default {
         price: option,
         size: key
       }
-      this.optionsSelected.push(modelSize);
+     
+      
+      let index = this.selectedOptionKeys.indexOf(key);
+
+        if (index !== -1) {
+          // La clave ya existe en el array, así que la eliminamos.
+          this.selectedOptionKeys.splice(index, 1);
+          this.optionsSelected.splice(index, 1);
+        } else {
+          // La clave no existe en el array, así que la agregamos.
+          this.selectedOptionKeys.push(key);
+          this.optionsSelected.push(modelSize);
+        }
+      
+      
       console.log(this.optionsSelected)
+      
     }
   },
   watch: {
@@ -72,7 +88,7 @@ export default {
       
       <h3>Medida</h3>
       <div class="options">
-        <div class="option" @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]">
+        <div class="option" :class="{ selected: selectedOptionKeys.includes(key) }" @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]" :key="key">
           <div class="" v-if="typeof option ===  'number'">
             {{ key }}
           </div>

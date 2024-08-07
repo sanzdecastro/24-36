@@ -52,7 +52,7 @@ export default {
       <RouterLink to="/">Reel</RouterLink>
       <RouterLink class="bag_container" to="/cart">
         <span>Cart</span>
-        <div class="bag">
+        <div v-if="numberCartItems >= 1" class="bag">
           <span class="" v-if="numberCartItems > 0" >{{ numberCartItems }}</span>
         </div>
       </RouterLink>

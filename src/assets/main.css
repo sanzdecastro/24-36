@@ -58,16 +58,27 @@ header nav {
   line-height: max(30 * var(--r), 30px);
 }
 
+a.router-link-active {
+  @apply
+  text-blue-700;
+}
+
 .bag_container {
   @apply
   flex
   gap-1;
 }
 
+.bag_container.router-link-active .bag {
+  @apply
+  bg-blue-700;
+}
+
 .bag_container .bag {
   width: max(28 * var(--r), 28px);
   height: max(28 * var(--r), 28px);
-  font-size: max(18 * var(--r), 18px);
+  font-size: max(16 * var(--r), 16px);
+  line-height: max(16 * var(--r), 16px);
   @apply
   flex
   items-center
@@ -99,10 +110,6 @@ header nav {
   justify-content: center;
 }
 
-.swiper .swiper-wrapper .swiper-slide img {
-
-}
-
 .swiper-vertical > .swiper-wrapper {
   height: calc(100vh - 5vh);
 }
@@ -126,13 +133,13 @@ img {
 }
 
 .single .image-container {
+  margin: max(20 * var(--r), 20px);
   top: max(70 * var(--r), 70px);
   @apply
   fixed
   left-0
   overflow-hidden
-  -z-10
-  rounded-lg;
+  -z-10;
   @apply
   flex
   justify-center
@@ -154,8 +161,20 @@ img {
   padding: max(20 * var(--r), 20px);
   padding-bottom: 20vh;
   @apply
-  z-10
+  relative
   bg-white;
+  &:after {
+    content: '';
+    @apply
+    absolute
+   bg-gradient-to-b
+   from-transparent
+   to-white
+    left-0
+    -top-9
+    w-full
+    h-9;
+  }
 }
 
 .single .card-info > * {
@@ -244,7 +263,26 @@ img {
   padding: max(20 * var(--r), 20px);
   padding-bottom: max(100 * var(--r), 100px);
   @apply
+  relative
   bg-white;
+  &:after {
+    content: '';
+    @apply
+    absolute
+    w-full
+    h-6
+    left-0
+    -top-6
+    bg-gradient-to-b
+    from-transparent
+    to-white;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: max(200 * var(--r), 200px);
+    
+  }
 }
 .cart .autor-block {
   @apply
@@ -286,4 +324,55 @@ img {
 .cart .autor-block .item .image-container, .cart .autor-block .item .item-info {
   @apply
   flex-1;
+}
+
+.autorx {
+  margin-top: max(200 * var(--r), 200px);
+  padding: max(20 * var(--r), 20px);
+  padding-bottom:  max(100 * var(--r), 100px);
+  @apply
+  relative
+  bg-white;
+  &:after {
+    content: '';
+    @apply
+    absolute
+    w-full
+    h-6
+    left-0
+    -top-6
+    bg-gradient-to-b
+    from-transparent
+    to-white;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: max(200 * var(--r), 200px);
+    
+  }
+}
+
+.autorx h1 {
+  font-size: max(30 * var(--r), 30px);
+  line-height: max(32 * var(--r), 32px);
+  margin-bottom: max(40 * var(--r), 40px);
+}
+
+
+.autorx .autorxs {
+  gap: max(20 * var(--r), 20px);
+  @apply
+  grid
+  grid-cols-2;
+}
+
+.autorx .autorxs .autor {
+  margin-bottom: max(20 * var(--r), 20px);
+}
+.autorx .autorxs .autor h2 {
+  font-family: 'Sometimes';
+  font-size: max(38 * var(--r), 38px);
+  line-height: max(38 * var(--r), 38px);
+  margin-bottom: max(10 * var(--r), 10px);
 }

@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { gsap } from "gsap";
 
 export const usePhotosStore = defineStore('photosStore', {
     state: () => ({
@@ -71,7 +72,33 @@ export const usePhotosStore = defineStore('photosStore', {
             }
 
             this.cartItems.push(item)
-            this.numberCartItems = this.numberCartItems + 1;
+
+            let bagActual = document.querySelector(".bag span");
+            const tl = gsap.timeline();
+
+            tl.to(bagActual, {
+              duration: .6,
+              xPercent: -100,
+              rotation: 15,
+              autoAlpha: 0,
+              ease: "power2.out",
+              onComplete: () => {
+                this.numberCartItems = this.numberCartItems + 1;
+              }
+            }).to(bagActual, {
+              duration:0,
+              rotation: -15,
+              xPercent: 100,
+            }).to(bagActual, {
+              duration: .6,
+              xPercent: 0,
+              autoAlpha: 1,
+              rotation: 0,
+              ease: "power2.in"
+            })
+
+
+            // this.numberCartItems = this.numberCartItems + 1;
             console.log(this.cartItems);
             console.log(this.numberCartItems);
             this.setLocal()

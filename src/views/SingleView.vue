@@ -2,6 +2,7 @@
 import { mapState } from 'pinia';
 import { mapActions } from 'pinia';
 import { usePhotosStore } from '@/stores/photosStore.js'
+import { gsap } from "gsap";
 
 // import imageSelection from '@/components/imageSelection.vue'
 export default {
@@ -17,6 +18,9 @@ export default {
       optionsSelected: [],
       selectedOptionKeys: []
     }
+  },
+  mounted() {
+    this.animateImage();
   },
   methods: {
     ...mapActions(usePhotosStore, ['updateSelectedPhoto', 'addToCart']),
@@ -51,6 +55,21 @@ export default {
 
       console.log(this.optionsSelected)
       
+    },
+
+    animateImage() {
+      let image = document.querySelector(".image-container")
+
+      gsap.set(image, {
+        autoAlpha: 0,
+        yPercent: 100,
+      });
+
+      gsap.to(image, {
+        duration: .6,
+        autoAlpha: 1,
+        yPercent: 0,
+      })
     }
   },
   watch: {
@@ -58,6 +77,7 @@ export default {
       if (!value) {
         // La variable cambió a false
         this.apply();
+        
       }
     }
   },

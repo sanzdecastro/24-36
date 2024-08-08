@@ -34,6 +34,7 @@
 body {
   font-family: 'Atlas';
   font-size: max(15 * var(--r), 15px);
+  line-height: max(19 * var(--r), 19px);
 }
 
 header {
@@ -259,73 +260,6 @@ img {
   opacity-30;
 }
 
-.cart {
-  margin-top: max(180 * var(--r), 180px);
-  padding: max(20 * var(--r), 20px);
-  padding-bottom: max(100 * var(--r), 100px);
-  @apply
-  relative
-  bg-white;
-  &:after {
-    content: '';
-    @apply
-    absolute
-    w-full
-    h-6
-    left-0
-    -top-6
-    bg-gradient-to-b
-    from-transparent
-    to-white;
-  }
-  @media screen and (min-width: 1200px) {
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top: max(200 * var(--r), 200px);
-    
-  }
-}
-.cart .autor-block {
-  @apply
-  flex
-  gap-2
-  flex-col;
-}
-
-.cart .autor-block .item {
-  @apply
-  flex
-  gap-2;
-}
-
-.cart .autor-block h2 {
-  font-size: max(30 * var(--r), 30px);
-  line-height: max(30 * var(--r), 30px);
-}
-
-.cart .autor-block h3 {
-  font-family: 'Sometimes';
-  font-size: max(24 * var(--r), 24px);
-  line-height: max(28 * var(--r), 28px);
-  margin-bottom: max(10 * var(--r), 10px);
-}
-
-.cart .autor-block .options {
-  @apply
-  flex
-  gap-0
-  flex-col;
-}
-
-.cart .autor-block .options span {
-  @apply
-  block;
-}
-
-.cart .autor-block .item .image-container, .cart .autor-block .item .item-info {
-  @apply
-  flex-1;
-}
 
 .autorx {
   margin-top: max(200 * var(--r), 200px);
@@ -355,8 +289,8 @@ img {
 }
 
 .autorx h1 {
-  font-size: max(30 * var(--r), 30px);
-  line-height: max(32 * var(--r), 32px);
+  font-size: max(20 * var(--r), 20px);
+  line-height: max(24 * var(--r), 24px);
   margin-bottom: max(40 * var(--r), 40px);
 }
 

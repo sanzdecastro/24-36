@@ -82,7 +82,7 @@ export default {
   </header>
 
   <Loading v-if="loading"/>
-
+  <!-- <Loading /> -->
   <router-view v-slot="{ Component, route }">
       <transition :name="route.name" mode="out-in" @before-enter="beforeEnter" @enter="enter" @leave="leave">
         <component :is="Component" :key="route.path"></component>

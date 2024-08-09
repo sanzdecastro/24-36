@@ -81,14 +81,28 @@ a.router-link-active {
   font-size: max(16 * var(--r), 16px);
   line-height: max(16 * var(--r), 16px);
   @apply
+  overflow-hidden
   flex
   items-center
   justify-center
   inline-block
   bg-black
+  relative
   text-white
   rounded-full;
+  &:before {
+    content: '';
+
+    @apply
+    w-full
+    h-full
+    absolute
+    top-0
+    left-0
+    bg-gradient-radial from-transparent via-transparent to-black
+  }
 }
+
 
 .logo, a.router-link-active .logo {
   width: 100%;
@@ -117,7 +131,7 @@ a.router-link-active {
 }
 
 .swiper-vertical > .swiper-wrapper {
-  height: calc(100vh - 5vh);
+  height: calc(100vh - 10vh);
   @media screen and (min-width: 1200px) {
     height: 100vh;
   }
@@ -178,7 +192,7 @@ img {
 }
 
 .single .card-info {
-  margin-top: calc(100vh - 5vh);
+  margin-top: calc(100vh - 10vh);
   padding: max(20 * var(--r), 20px);
   padding-bottom: 20vh;
   @apply

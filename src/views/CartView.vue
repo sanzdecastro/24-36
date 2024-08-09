@@ -112,7 +112,6 @@ export default {
           </div>
             <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <h3 class="autor">{{  item.autor }}</h3>
             <div class="options" v-for=" selected in item.optionsSelected">
               <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>
@@ -140,7 +139,6 @@ export default {
             </div>
             <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <h3 class="autor">{{  item.autor }}</h3>
             <div class="options" v-for=" selected in item.optionsSelected">
               <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>
@@ -168,7 +166,6 @@ export default {
           </div>
             <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <h3 class="autor">{{  item.autor }}</h3>
             <div class="options" v-for=" selected in item.optionsSelected">
               <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>

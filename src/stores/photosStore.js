@@ -79,24 +79,23 @@ export const usePhotosStore = defineStore('photosStore', {
 
             tl.to(bagActual, {
               duration: .3,
-              xPercent: -100,
-              rotation: 15,
-              autoAlpha: 0,
+              xPercent: -150,
+              rotation: 38,
+              
               ease: "power2.out",
               onComplete: () => {
                 this.numberCartItems = this.numberCartItems + 1;
               }
             }).to(bagActual, {
               duration:0,
-              rotation: -15,
-              xPercent: 100,
+              rotation: -38,
+              xPercent: 150,
             }).to(bagActual, {
               duration: .3,
               xPercent: 0,
-              autoAlpha: 1,
               rotation: 0,
               ease: "power2.in"
-            }, '<=.3')
+            }, '<=.1')
 
 
             // this.numberCartItems = this.numberCartItems + 1;

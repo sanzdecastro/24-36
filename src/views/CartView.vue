@@ -74,32 +74,38 @@ export default {
 <template>
   <div class="cart">
     <h1>Encarga tus láminas contactando con el/la autorx de las fotografías seleccionadas</h1>
-
+    
     <div class="autor-block duna" v-if="itemsDuna.length > 0">
-      <h3>Seleccionadas de Duna Vallés</h3>
+      <h3>Duna Vallés</h3>
       <div class="item" v-if="itemsDuna.length > 0" v-for="item in itemsDuna">
         <div class="image-container">
-          <h2>Seleccionadas de Duna Vallés</h2>
+         
           <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
           </div>
           <div class="item-info">
             <h2>{{ item.title }}</h2>
-            <h3 class="autor">{{  item.autor }}</h3>
+           
             <div class="options" v-for=" selected in item.optionsSelected">
-              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
+              <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
         </div>
        
       </div>
-      <p>Total: {{ this.totalDuna }}€</p>
-        
+      <div class="subtotal">
+        <div class="total"><p>Total</p><p>{{ this.totalDuna }}€</p></div>
+        <div class="button-container">
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+        </div>
+      </div>
+
         <!-- <PayPalDonateButton/> -->
     </div>
 
     <div class="autor-block lorenzo" v-if="itemsLorenzo.length > 0">
-      <h3>Seleccionadas de Lorenzo de Nicola</h3>
+      <h3>Lorenzo de Nicola</h3>
       <div class="item" v-if="itemsLorenzo.length > 0" v-for="item in itemsLorenzo">
         <div class="image-container">
             <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
@@ -108,19 +114,26 @@ export default {
             <h2>{{ item.title }}</h2>
             <h3 class="autor">{{  item.autor }}</h3>
             <div class="options" v-for=" selected in item.optionsSelected">
-              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
+              <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
         </div>
        
       </div>
-      <p>Total: {{ this.totalLorenzo }}€</p>
+      <div class="subtotal">
+        <div class="total"><p>Total</p><p>{{ this.totalLorenzo }}€</p></div>
+        <div class="button-container">
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+        </div>
+      </div>
+      
         <!-- <PayPalDonateButton/> -->
     </div>
 
     <div class="autor-block paula" v-if="itemsPaula.length > 0">
-      <h3>Seleccionadas de Paula Grácia</h3>
+      <h3>Paula Grácia</h3>
       <div class="item" v-if="itemsPaula.length > 0" v-for="item in itemsPaula">
         <div class="image-container">
             <img :src="this.photoUrl  + item.photo + '&sz=w600-h600'"  alt="">
@@ -129,19 +142,25 @@ export default {
             <h2>{{ item.title }}</h2>
             <h3 class="autor">{{  item.autor }}</h3>
             <div class="options" v-for=" selected in item.optionsSelected">
-              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
+              <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
         </div>
        
       </div>
-      <p>Total: {{ this.totalPaula }}€</p>
         <!-- <PayPalDonateButton/> -->
+      <div class="subtotal">
+        <div class="total"><p>Total</p><p>{{ this.totalPaula }}€</p></div>
+        <div class="button-container">
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+        </div>
+      </div>
     </div>
 
     <div class="autor-block santi" v-if="itemsSanti.length > 0">
-      <h3>Seleccionadas de Santi Sánchez</h3>
+      <h3>Santi Sánchez</h3>
       <div class="item" v-if="itemsSanti.length > 0" v-for="item in itemsSanti">
         
         <div class="image-container">
@@ -151,16 +170,21 @@ export default {
             <h2>{{ item.title }}</h2>
             <h3 class="autor">{{  item.autor }}</h3>
             <div class="options" v-for=" selected in item.optionsSelected">
-              <span>Tamaño: {{ selected.size }}</span> <span>Precio: {{ selected.price }}</span>
+              <span>{{ selected.size }} cm</span> <span>{{ selected.price }}€</span>
             </div>
             
             <div @click="removeFromCart(item.title, this.totalPrice)" class="remove">Eliminar</div>
         </div>
         
       </div>
-      <p>Total: {{ this.totalSanti }}€</p>
-        <!-- <PayPalDonateButtonSanti/> -->
-        <a class="button" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank" style="display:inline-block;background-color:#25d366;padding:10px 24px;color:#fff;font-size:16px;line-height:1.5;border-radius:2px;text-decoration:none;">Contactar con Santi Sánchez</a>
+      <div class="subtotal">
+        <div class="total"><p>Total</p><p>{{ this.totalSanti }}€</p></div>
+        <div class="button-container">
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+        </div>
+      </div>
+     
     </div>
 
     
@@ -223,19 +247,20 @@ export default {
 .cart .autor-block h2 {
   font-size: max(30 * var(--r), 30px);
   line-height: max(30 * var(--r), 30px);
+  margin-bottom: max(10 * var(--r), 10px);
 }
 
-.cart .autor-block h3 {
+.cart .autor-block > h3 {
   font-family: 'Sometimes';
   font-size: max(24 * var(--r), 24px);
   line-height: max(28 * var(--r), 28px);
   margin-bottom: max(10 * var(--r), 10px);
 }
 
-.cart .autor-block > h3 {
-  font-family: 'Atlas';
-  font-size: max(20 * var(--r), 20px);
-  line-height: max(24 * var(--r), 24px);
+.cart .autor-block  h3 {
+  font-family: 'Sometimes';
+  font-size: max(30 * var(--r), 30px);
+  line-height: max(30 * var(--r), 30px);
   border-top: 1px solid black;
   padding-top: max(10 * var(--r), 10px);
   padding-bottom: max(20 * var(--r), 20px);
@@ -256,6 +281,34 @@ export default {
 .cart .autor-block .item .image-container, .cart .autor-block .item .item-info {
   @apply
   flex-1;
+}
+
+.cart .subtotal {
+  padding-top: max(20 * var(--r), 20px);
+  @apply
+  flex
+  flex-col;
+}
+
+.cart .subtotal .total {
+  @apply
+  w-full
+  justify-between
+  flex;
+}
+
+.cart .subtotal p {
+  font-size: max(20 * var(--r), 20px);
+  margin-bottom: max(20 * var(--r), 20px);
+}
+
+.cart .subtotal .button-container {
+
+  @apply
+  flex
+  flex-col
+  gap-2
+  text-center;
 }
 
 </style>

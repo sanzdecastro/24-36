@@ -268,6 +268,32 @@ img {
   rounded-full;
 }
 
+.button {
+  padding: max(10 * var(--r), 10px) max(20 * var(--r), 20px) max(7 * var(--r), 7px) max(20 * var(--r), 20px);
+  border: 1px solid black;
+  @apply
+  float-end
+  rounded-full;
+}
+
+.button.whats {
+  font-family: 'Atlas-Bold';
+  letter-spacing: max(-2 * var(--r), -2px);
+  @apply
+  bg-green-400
+  border-none
+  text-green-100;
+}
+
+.button.pay {
+  font-family: 'Atlas-Bold';
+  letter-spacing: max(-2 * var(--r), -2px);
+  @apply
+  bg-blue-400
+  border-none
+  text-blue-100;
+}
+
 .single h3 {
   margin-bottom: max(8 * var(--r), 8px);
 }

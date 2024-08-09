@@ -107,9 +107,9 @@ export default {
       
       <h3>Medida</h3>
       <div class="options">
-        <div class="option" :class="{ selected: selectedOptionKeys.includes(key) }" @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]" :key="key">
+        <div  @click="addOption(option, key)" v-for="(option, key) in this.sizeOptions[0]" :key="key">
           <div class="" v-if="typeof option ===  'number'">
-            {{ key }}
+            <div class="option" :class="{ selected: selectedOptionKeys.includes(key) }">{{ key }}</div>
           </div>
         </div>
           <!-- <div class="option" v-for="option in sizeOptions">

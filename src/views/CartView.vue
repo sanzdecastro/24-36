@@ -93,7 +93,7 @@ export default {
         </div>
        
       </div>
-      <p>Precio total: {{ this.totalDuna }}</p>
+      <p>Total: {{ this.totalDuna }}€</p>
         
         <!-- <PayPalDonateButton/> -->
     </div>
@@ -115,7 +115,7 @@ export default {
         </div>
        
       </div>
-      <p>Precio total: {{ this.totalLorenzo }}</p>
+      <p>Total: {{ this.totalLorenzo }}€</p>
         <!-- <PayPalDonateButton/> -->
     </div>
 
@@ -136,7 +136,7 @@ export default {
         </div>
        
       </div>
-      <p>Precio total: {{ this.totalPaula }}</p>
+      <p>Total: {{ this.totalPaula }}€</p>
         <!-- <PayPalDonateButton/> -->
     </div>
 
@@ -158,7 +158,7 @@ export default {
         </div>
         
       </div>
-      <p>Precio total: {{ this.totalSanti }}</p>
+      <p>Total: {{ this.totalSanti }}€</p>
         <!-- <PayPalDonateButtonSanti/> -->
         <a class="button" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank" style="display:inline-block;background-color:#25d366;padding:10px 24px;color:#fff;font-size:16px;line-height:1.5;border-radius:2px;text-decoration:none;">Contactar con Santi Sánchez</a>
     </div>
@@ -209,6 +209,7 @@ export default {
   flex
   gap-2
   flex-col;
+  margin-bottom: max(40 * var(--r), 40px);
 }
 
 

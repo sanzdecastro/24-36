@@ -44,7 +44,7 @@ export default {
 
 <template>
   <main>
-    <div>
+    <div class="reel">
       <swiper
           :class="'card'"
           :direction="'vertical'"
@@ -53,7 +53,10 @@ export default {
         >
         <swiper-slide v-for="photo in dataReelRandom" :key="photo">
           <router-link @click="updateSelectedPhoto(photo)" :to="`${photo.title}`">
-          <img :src="this.photoUrl + photo.image + '&sz=w600-h600'" :alt="photo.title">
+            <div class="image-container">
+              <img :src="this.photoUrl + photo.image + '&sz=w600-h600'" :alt="photo.title">
+            </div>
+          
           <h2>{{ photo.title }}</h2>
           <div class="prices">
             <span v-if="photo.size20x30">{{ photo.size20x30 }}€</span>

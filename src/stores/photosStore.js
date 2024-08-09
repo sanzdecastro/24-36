@@ -23,6 +23,7 @@ export const usePhotosStore = defineStore('photosStore', {
       cartItems: [],
       numberCartItems: 0,
       totalPrice: 0,
+      visited: false,
     }),
     getters: {
     },
@@ -147,6 +148,21 @@ export const usePhotosStore = defineStore('photosStore', {
               console.log(this.cartItems);
             }
           },
+          storage() {
+              
+                // Verificar si el usuario ya ha visitado la página
+                let visit = sessionStorage.getItem('firstVisit');
+            
+                if (!visit) {
+                    this.visited = false
+                    sessionStorage.setItem('firstVisit', 'true');
+                } else {
+                  this.visited = true
+                    console.log("Ya has visitado esta página antes.");
+                }
+            
+
+          }
     },
     
 })

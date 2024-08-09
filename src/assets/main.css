@@ -40,7 +40,7 @@ body {
 header {
   width: 100vw;
   border-top: 1px solid black;
-  padding: max(6 * var(--r), 6px) max(20 * var(--r), 20px);
+  padding: max(10 * var(--r), 10px) max(20 * var(--r), 20px) max(13 * var(--r), 13px) max(20 * var(--r), 20px);
   @apply
   bg-white
   fixed

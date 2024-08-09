@@ -18,6 +18,11 @@ name: 'loading',
 
         gsap.set(logoLoading, {
             yPercent: 100,
+            autoAlpha: 0,
+        })
+
+        gsap.to(".loading-container span", {
+            autoAlpha: 1,
         })
         tl.to(logoLoading, {
             yPercent: 0,

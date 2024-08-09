@@ -7,21 +7,26 @@ import { gsap } from "gsap";
 import Lenis from 'lenis'
 
 import Loading from './components/loading.vue'
+import Intro from './components/intro.vue'
+
 export default {
   name: "App",
   components: {
     Loading,
+    Intro
   },
   computed: {
-        ...mapState(usePhotosStore, ['data','dataReel','dataReelRandom', 'loading', 'cartItems', 'numberCartItems'])
+        ...mapState(usePhotosStore, ['data','dataReel','dataReelRandom', 'loading', 'cartItems', 'numberCartItems', 'visited'])
   },
   created() {
     this.Lenis()
     this.fetchData();
     this.getLocal();
+    this.storage();
+    console.log(this.visited)
   },
   methods: {
-        ...mapActions(usePhotosStore, ['fetchData', 'getLocal']),
+        ...mapActions(usePhotosStore, ['fetchData', 'getLocal', 'storage']),
 
         beforeEnter(el) {
           gsap.set(el, {
@@ -81,6 +86,7 @@ export default {
     </nav>
   </header>
 
+  <Intro v-if="!visited" />
   <Loading v-if="loading"/>
   <!-- <Loading /> -->
   <router-view v-slot="{ Component, route }">

@@ -53,6 +53,34 @@ export default {
         yPercent: 0,
         delay: .3,
       })
+    },
+
+    animateLogo() {
+      let image = document.querySelectorAll(".logo")
+
+      gsap.set(image, {
+        yPercent: -100,
+      });
+
+      gsap.to(image, {
+        duration: .6,
+        yPercent: 0,
+        delay: .6,
+      })
+    },
+
+    animateMenu() {
+      let image = document.querySelectorAll("header")
+
+      gsap.set(image, {
+        yPercent: 100,
+      });
+
+      gsap.to(image, {
+        duration: .6,
+        yPercent: 0,
+        delay: 1,
+      })
     }
   },
   watch: {
@@ -62,6 +90,8 @@ export default {
         
         this.$nextTick(() => {
           this.animateReel();
+          this.animateLogo();
+          this.animateMenu();
         });
       }
     }

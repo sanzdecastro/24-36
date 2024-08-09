@@ -280,18 +280,20 @@ img {
   font-family: 'Atlas-Bold';
   letter-spacing: max(-2 * var(--r), -2px);
   @apply
-  bg-green-400
+  bg-black
   border-none
-  text-green-100;
+  text-white;
 }
 
 .button.pay {
   font-family: 'Atlas-Bold';
   letter-spacing: max(-2 * var(--r), -2px);
   @apply
-  bg-blue-400
+  opacity-10
+  pointer-events-none
+  bg-black
   border-none
-  text-blue-100;
+  text-white;
 }
 
 .single h3 {

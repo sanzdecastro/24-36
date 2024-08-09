@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 
+import { gsap } from "gsap";
+
 export default {
   // props: {
   //   dataReelRandom: Array,
@@ -27,7 +29,7 @@ export default {
       };
     },
   computed: {
-        ...mapState(usePhotosStore, ['data','dataReel','dataReelRandom','selectedPhoto'])
+        ...mapState(usePhotosStore, ['loading','data','dataReel','dataReelRandom','selectedPhoto'])
   },
   data() {
     return {
@@ -35,8 +37,35 @@ export default {
     }
   },
   methods: {
-    ...mapActions(usePhotosStore, ['updateSelectedPhoto'])
-  }
+    ...mapActions(usePhotosStore, ['updateSelectedPhoto']),
+
+    animateReel() {
+      let image = document.querySelectorAll(".reel .swiper-slide")
+
+      gsap.set(image, {
+        autoAlpha: 0,
+        yPercent: 10,
+      });
+
+      gsap.to(image, {
+        duration: .6,
+        autoAlpha: 1,
+        yPercent: 0,
+        delay: .3,
+      })
+    }
+  },
+  watch: {
+    loading(value) {
+      if (!value) {
+        // La variable cambió a false
+        
+        this.$nextTick(() => {
+          this.animateReel();
+        });
+      }
+    }
+  },
   
  
 }

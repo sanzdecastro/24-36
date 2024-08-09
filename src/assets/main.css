@@ -102,6 +102,10 @@ a.router-link-active {
   @apply
   text-black
   -z-10;
+  @media screen and (min-width: 1200px) {
+    font-size: max(220 * var(--r), 220px);
+  line-height:  max(220 * var(--r), 220px);
+  }
 }
 
 .swiper .swiper-wrapper .swiper-slide {
@@ -114,6 +118,9 @@ a.router-link-active {
 
 .swiper-vertical > .swiper-wrapper {
   height: calc(100vh - 5vh);
+  @media screen and (min-width: 1200px) {
+    height: 100vh;
+  }
 }
 
 img {
@@ -121,9 +128,10 @@ img {
   w-full;
 }
 
-.reel .card a {
-
+.reel  {
+  
 }
+
 .reel .card a img {
   width: 100%;
   height: auto;
@@ -201,6 +209,10 @@ img {
   font-size: max(30 * var(--r), 30px);
   line-height: max(30 * var(--r), 30px);
   margin-bottom: max(3 * var(--r), 3px);
+}
+
+.single .card-info h3 {
+  margin-bottom: max(10 * var(--r), 10px);
 }
 
 .single .card-info .info-header {

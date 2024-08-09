@@ -117,10 +117,10 @@ name: 'intro',
             <div class="guion"><div>-</div></div>
             <div class="line line2">
                 <span>36</span>
-                <img src="../assets/images/01.jpg">
-                <img src="../assets/images/02.jpg">
-                <img src="../assets/images/03.jpg">
-                <img src="../assets/images/04.jpg">
+                <img src="../assets/images/05.jpg">
+                <img src="../assets/images/06.jpg">
+                <img src="../assets/images/07.jpg">
+                <img src="../assets/images/08.jpg">
                 
             </div>
             

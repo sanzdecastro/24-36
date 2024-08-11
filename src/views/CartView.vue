@@ -22,6 +22,10 @@ export default {
       totalLorenzo: 0,
       totalDuna: 0,
       totalPaula: 0,
+      msgSanti: '',
+      msgDuna: '',
+      msgPaula: '',
+      msgLorenzo: '',
     }
   },
   computed: {
@@ -41,7 +45,26 @@ export default {
       this.itemsLorenzo = itemsLorenzo;
       this.itemsPaula = itemsPaula;
       this.itemsDuna = itemsDuna;
-      return itemsSanti;
+      this.msgSanti = this.itemsSanti.map(phrase => {
+          console.log(phrase);
+          console.log(phrase.title + phrase.optionsSelected[0].price + phrase.optionsSelected[0].size + this.totalSanti);
+          return `🖼️ ${phrase.title} de la medida ${phrase.optionsSelected[0].size}cm y precio ${phrase.optionsSelected[0].price}€`;
+      }).join(' ');
+      this.msgPaula = this.itemsPaula.map(phrase => {
+          console.log(phrase);
+          console.log(phrase.title + phrase.optionsSelected[0].price + phrase.optionsSelected[0].size + this.totalSanti);
+          return `🖼️ ${phrase.title} de la medida ${phrase.optionsSelected[0].size}cm y precio ${phrase.optionsSelected[0].price}€`;
+      }).join(' ');
+      this.msgLorenzo = this.itemsLorenzo.map(phrase => {
+          console.log(phrase);
+          console.log(phrase.title + phrase.optionsSelected[0].price + phrase.optionsSelected[0].size + this.totalSanti);
+          return `🖼️ ${phrase.title} de la medida ${phrase.optionsSelected[0].size}cm y precio ${phrase.optionsSelected[0].price}€`;
+      }).join(' ');
+      this.msgDuna = this.itemsDuna.map(phrase => {
+          console.log(phrase);
+          console.log(phrase.title + phrase.optionsSelected[0].price + phrase.optionsSelected[0].size + this.totalSanti);
+          return `🖼️ ${phrase.title} de la medida ${phrase.optionsSelected[0].size}cm y precio ${phrase.optionsSelected[0].price}€`;
+      }).join(' ');
     },
 
     calculateTotalByAuthor() {
@@ -96,7 +119,7 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalDuna }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgDuna" target="_blank">WhatsApp</a>
           <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
         </div>
       </div>
@@ -123,7 +146,7 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalLorenzo }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgLorenzo" target="_blank">WhatsApp</a>
           <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
         </div>
       </div>
@@ -151,7 +174,7 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalPaula }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgPaula" target="_blank">WhatsApp</a>
           <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
         </div>
       </div>
@@ -177,8 +200,8 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalSanti }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">WhatsApp</a>
-          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+          <a class="button whats" :href="'https://wa.me/+34695501618?text=Me%20gustaría%20recibir%20' + this.msgSanti" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgSanti.optionsSelected" target="_blank">PayPal</a>
         </div>
       </div>
      
@@ -233,7 +256,12 @@ export default {
   margin-bottom: max(40 * var(--r), 40px);
 }
 
-
+.bag_container .bag {
+  &:before {
+    @apply
+    hidden;
+  }
+}
 
 .cart .autor-block .item {
   @apply

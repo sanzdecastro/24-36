@@ -92,7 +92,6 @@ a.router-link-active {
   rounded-full;
   &:before {
     content: '';
-
     @apply
     w-full
     h-full
@@ -101,6 +100,10 @@ a.router-link-active {
     left-0
     bg-gradient-radial from-transparent via-transparent to-black
   }
+}
+
+.bag_container .bag span {
+  line-height: 0px;
 }
 
 

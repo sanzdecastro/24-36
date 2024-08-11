@@ -68,7 +68,7 @@ export default {
 
 <template>
   <RouterLink to="/">
-    <h1 class="logo">24-36</h1>
+    <h1 class="logo">24—36</h1>
   </RouterLink>
   
   

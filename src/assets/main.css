@@ -113,8 +113,8 @@ a.router-link-active {
   top: 0px;
   left: 0px;
   font-family: 'Sometimes';
-  font-size: max(138 * var(--r), 138px);
-  line-height:  max(138 * var(--r), 138px);
+  font-size: max(120 * var(--r), 120px);
+  line-height:  max(120 * var(--r), 120px);
   text-align: center;
   @apply
   text-black

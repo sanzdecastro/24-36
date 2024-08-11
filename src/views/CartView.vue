@@ -97,6 +97,10 @@ export default {
 <template>
   <div class="cart">
     <h1>Encarga tus láminas contactando con el/la autorx de las fotografías seleccionadas</h1>
+
+    <div v-if="this.cartItems.length === 0" class="no-items">
+      Ahora mismo, no has añadido ninguna lámina al carrito 😳
+    </div>
     
     <div class="autor-block duna" v-if="itemsDuna.length > 0">
       <h3>Duna Vallés</h3>
@@ -119,8 +123,8 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalDuna }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgDuna" target="_blank">WhatsApp</a>
-          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+          <a class="button whats" :href="'https://wa.me/+34660569399?text=Me%20gustaría%20recibir%20' + this.msgDuna" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Me%20gustaría%20recibir%20' + this.itemsSanti" target="_blank">PayPal</a>
         </div>
       </div>
 
@@ -146,8 +150,8 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalLorenzo }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgLorenzo" target="_blank">WhatsApp</a>
-          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+          <a class="button whats" :href="'https://wa.me/+34695064690?text=Me%20gustaría%20recibir%20' + this.msgLorenzo" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Me%20gustaría%20recibir%20' + this.itemsSanti" target="_blank">PayPal</a>
         </div>
       </div>
       
@@ -174,8 +178,8 @@ export default {
       <div class="subtotal">
         <div class="total"><p>Total</p><p>{{ this.totalPaula }}€</p></div>
         <div class="button-container">
-          <a class="button whats" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgPaula" target="_blank">WhatsApp</a>
-          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.itemsSanti" target="_blank">PayPal</a>
+          <a class="button whats" :href="'https://wa.me/+34649792177?text=Me%20gustaría%20recibir%20' + this.msgPaula" target="_blank">WhatsApp</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Me%20gustaría%20recibir%20' + this.itemsSanti" target="_blank">PayPal</a>
         </div>
       </div>
     </div>
@@ -201,7 +205,7 @@ export default {
         <div class="total"><p>Total</p><p>{{ this.totalSanti }}€</p></div>
         <div class="button-container">
           <a class="button whats" :href="'https://wa.me/+34695501618?text=Me%20gustaría%20recibir%20' + this.msgSanti" target="_blank">WhatsApp</a>
-          <a class="button pay" :href="'https://wa.me/+34695501618?text=Estoy%20interesada%20en%20' + this.msgSanti.optionsSelected" target="_blank">PayPal</a>
+          <a class="button pay" :href="'https://wa.me/+34695501618?text=Me%20gustaría%20recibir%20' + this.msgSanti.optionsSelected" target="_blank">PayPal</a>
         </div>
       </div>
      

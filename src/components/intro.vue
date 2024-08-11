@@ -114,7 +114,7 @@ name: 'intro',
                 <img src="../assets/images/04.jpg">
                 <span>24</span>
             </div>
-            <div class="guion"><div>-</div></div>
+            <div class="guion"><div>—</div></div>
             <div class="line line2">
                 <span>36</span>
                 <img src="../assets/images/05.jpg">
@@ -133,7 +133,7 @@ name: 'intro',
 .intro-container {
     
     width: 100vw;
-    height: 100dvh;
+    height: 100vh;
     @apply
     z-50
     bg-white
@@ -172,8 +172,8 @@ name: 'intro',
 
 .intro-container span, .intro-container div  {
     font-family: 'Sometimes';
-    font-size: max(138 * var(--r), 138px);
-    line-height:  max(138 * var(--r), 138px);
+    font-size: max(120 * var(--r), 120px);
+    line-height:  max(120 * var(--r), 120px);
     @apply
     flex
     justify-center

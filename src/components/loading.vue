@@ -42,7 +42,7 @@ name: 'loading',
 <template>
     <div class="loading-container">
         <div class="mask">
-            <span>24</span><div>-</div><span>36</span>
+            <span>24</span><div>—</div><span>36</span>
         </div>
     </div>
 </template>
@@ -71,8 +71,8 @@ name: 'loading',
 
 .loading-container span, .loading-container div  {
     font-family: 'Sometimes';
-    font-size: max(138 * var(--r), 138px);
-    line-height:  max(138 * var(--r), 138px);
+    font-size: max(120 * var(--r), 120px);
+    line-height:  max(120 * var(--r), 120px);
     @apply
     block;
 }

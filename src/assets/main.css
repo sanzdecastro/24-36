@@ -283,6 +283,12 @@ img {
   @apply
   float-end
   rounded-full;
+
+  &:active {
+    @apply
+    bg-black
+    text-white;
+  }
 }
 
 .button {

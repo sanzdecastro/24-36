@@ -119,7 +119,7 @@ export default {
           </div> -->
       </div>
       <div>
-        <button class="submit" :class="optionsSelected.length > 0 ? '' : 'disabled'" @click="addToCart(this.selectedPhoto.image, selectedPhoto.title, selectedPhoto.autor, optionsSelected)">Add to cart</button>
+        <button class="submit" :class="optionsSelected.length > 0 ? '' : 'disabled'" @click="addToCart(this.selectedPhoto.image, selectedPhoto.title, selectedPhoto.autor, optionsSelected)">Añadir al carrito</button>
       </div>
       
     </div>

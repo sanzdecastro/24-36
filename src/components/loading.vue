@@ -50,7 +50,7 @@ name: 'loading',
 <style>
 .loading-container {
     width: 100vw;
-    height: 100dvh;
+    height: 100vh;
     @apply
     bg-white
     overflow-hidden

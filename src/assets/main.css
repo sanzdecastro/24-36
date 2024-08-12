@@ -119,7 +119,7 @@ a.router-link-active {
   @apply
   text-black
   -z-10;
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     font-size: max(220 * var(--r), 220px);
   line-height:  max(220 * var(--r), 220px);
   }
@@ -134,10 +134,7 @@ a.router-link-active {
 }
 
 .swiper-vertical > .swiper-wrapper {
-  height: calc(100vh - 10vh);
-  @media screen and (min-width: 1200px) {
-    height: 100vh;
-  }
+  height: 100vh;
 }
 
 img {
@@ -150,8 +147,8 @@ img {
 }
 
 .reel .card a img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 65vh;
 
 }
 .reel .card a h2 {
@@ -165,6 +162,7 @@ img {
 
 .reel .card .image-container {
   margin-bottom: max(14 * var(--r), 14px);
+  min-height: 65vh;
   @apply
   items-center
   flex;
@@ -182,7 +180,7 @@ img {
   flex
   justify-center
   items-center;
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     width: 100%;
     height: calc(90vh - max(70 * var(--r), 70px));
     margin: 0px;
@@ -216,7 +214,7 @@ img {
 }
 
 .single .card-info > * {
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     max-width: 500px;
     margin: 0 auto;
   }
@@ -354,7 +352,7 @@ img {
     from-transparent
     to-white;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     max-width: 500px;
     margin: 0 auto;
     margin-top: max(200 * var(--r), 200px);

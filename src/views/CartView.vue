@@ -238,7 +238,7 @@ export default {
     from-transparent
     to-white;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     max-width: 500px;
     margin: 0 auto;
     margin-top: max(200 * var(--r), 200px);

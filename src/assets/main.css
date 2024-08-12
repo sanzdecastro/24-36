@@ -146,6 +146,10 @@ img {
   min-width: 100%;
 }
 
+.reel .swiper {
+  max-width: 500px;
+}
+
 .reel .card a {
   min-width: 100%;
   height: 65dvh;

@@ -146,10 +146,21 @@ img {
   
 }
 
-.reel .card a img {
-  width: auto;
+.reel .card a {
   height: 65vh;
+  @apply
+  text-left
+  flex
+  flex-col
+  justify-center
+  items-center;
+}
 
+.reel .card a img {
+  width: 100%;
+  height: auto;
+  @apply
+  scale-105;
 }
 .reel .card a h2 {
   font-size: max(30 * var(--r), 30px);
@@ -160,10 +171,17 @@ img {
   w-full;
 }
 
+.reel .card a .prices {
+  width: 100%;
+  @apply
+  text-left;
+}
+
 .reel .card .image-container {
   margin-bottom: max(14 * var(--r), 14px);
   min-height: 65vh;
   @apply
+  overflow-hidden
   items-center
   flex;
 }
